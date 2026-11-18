@@ -1,0 +1,158 @@
+/* ===== Decade themes =====
+   machine.php puts one of these classes on <body> based on the birth year,
+   so the whole page restyles itself to match the era. */
+
+/* Shared helper for the light themes: inner boxes need a solid look */
+.t-60s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip),
+.t-70s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip),
+.t-00s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip),
+.t-10s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip) {
+  background: var(--tile);
+}
+.t-60s .moon-tile, .t-70s .moon-tile, .t-00s .moon-tile, .t-10s .moon-tile, .t-90s .moon-tile {
+  background: radial-gradient(circle at 50% 30%, #1b2550, #070a16);
+}
+
+/* ---------- 1960s: mod pastels and polka dots ---------- */
+.t-60s {
+  --bg: #fff3f7; --bg2: #d9f7ef; --panel: rgba(255, 255, 255, 0.82); --panel-border: #f3b5c9;
+  --text: #3d2c5e; --muted: #7a6a99; --accent: #ff5d8f; --accent2: #3fc1a5; --btn-text: #fff;
+  --tile: #fff8fb; --font-head: 'Lobster', cursive; --radius: 28px;
+  --shadow: 0 8px 0 #f3b5c9;
+}
+.t-60s body, body.t-60s {
+  background-color: #fff3f7;
+  background-image: radial-gradient(#ffc2d6 14%, transparent 15%), radial-gradient(#bdeee1 14%, transparent 15%);
+  background-size: 60px 60px; background-position: 0 0, 30px 30px;
+}
+.t-60s .section-title, .t-60s .arrival-date { color: var(--accent); letter-spacing: 0.02em; }
+.t-60s .site-header { background: rgba(255, 243, 247, 0.92); }
+
+/* ---------- 1970s: warm browns, oranges and stripes ---------- */
+.t-70s {
+  --bg: #f6e3c5; --bg2: #f6e3c5; --panel: #fff4e0; --panel-border: #d68c45;
+  --text: #4a2c13; --muted: #8a5a32; --accent: #e76f51; --accent2: #e9c46a; --btn-text: #fff;
+  --tile: #fdebd0; --font-head: 'Righteous', cursive; --radius: 40px;
+  --shadow: 6px 6px 0 #7f4f24;
+}
+body.t-70s {
+  background: #f6e3c5;
+  background-image: linear-gradient(180deg, #e9c46a 0 18px, #f4a261 18px 36px, #e76f51 36px 54px, #7f4f24 54px 72px, transparent 72px);
+  background-repeat: no-repeat; background-size: 100% 72px; background-position: 0 64px;
+}
+.t-70s .panel { border-width: 4px; }
+.t-70s .section-title { color: #7f4f24; text-transform: uppercase; }
+.t-70s .site-header { background: #4a2c13; }
+.t-70s .site-header, .t-70s .site-header a, .t-70s .brand, .t-70s .site-header .link-btn { color: #f6e3c5; }
+
+/* ---------- 1980s: neon synthwave ---------- */
+.t-80s {
+  --bg: #0d0221; --bg2: #2b0a4f; --panel: rgba(25, 3, 50, 0.78); --panel-border: #ff2bd6;
+  --text: #f5f5ff; --muted: #c6a8ff; --accent: #ff2bd6; --accent2: #00f0ff; --btn-text: #0d0221;
+  --font-head: 'Monoton', cursive; --radius: 6px;
+  --shadow: 0 0 18px rgba(255, 43, 214, 0.55);
+}
+body.t-80s {
+  background:
+    linear-gradient(transparent 65%, rgba(255, 43, 214, 0.25) 65%),
+    repeating-linear-gradient(90deg, rgba(0, 240, 255, 0.15) 0 2px, transparent 2px 80px),
+    repeating-linear-gradient(0deg, rgba(0, 240, 255, 0.15) 0 2px, transparent 2px 80px),
+    radial-gradient(circle at 50% 30%, #ff7b39 0 120px, transparent 121px),
+    linear-gradient(#0d0221, #2b0a4f);
+  background-attachment: fixed;
+}
+.t-80s .section-title, .t-80s .arrival-date { font-weight: 400; letter-spacing: 0.06em; color: var(--accent2);
+  text-shadow: 0 0 10px var(--accent2), 0 0 30px var(--accent); }
+.t-80s .tile-main, .t-80s .price-row b, .t-80s .counter b, .t-80s .planet b { font-family: 'Space Grotesk', sans-serif; }
+.t-80s .panel { border-width: 2px; }
+
+/* ---------- 1990s: Windows 95 ---------- */
+.t-90s {
+  --bg: #008080; --bg2: #008080; --panel: #c0c0c0; --panel-border: #808080;
+  --text: #000; --muted: #333; --accent: #000080; --accent2: #000080; --btn-text: #000;
+  --font-head: 'VT323', monospace; --font-body: 'Tahoma', 'Verdana', sans-serif; --radius: 0;
+  --shadow: none;
+}
+body.t-90s { background: #008080; }
+.t-90s .panel {
+  border: 0; position: relative; padding-top: 3.2rem;
+  box-shadow: inset -2px -2px #0a0a0a, inset 2px 2px #fff, inset -4px -4px #808080, inset 4px 4px #dfdfdf;
+}
+.t-90s .panel::before {
+  content: '⏱️ birthday_time_machine.exe'; position: absolute; top: 4px; left: 4px; right: 4px; height: 28px;
+  background: linear-gradient(90deg, #000080, #1084d0); color: #fff; font: bold 14px Tahoma, sans-serif;
+  padding: 5px 8px; box-sizing: border-box;
+}
+.t-90s .panel::after {
+  content: '✕'; position: absolute; top: 8px; right: 10px; width: 18px; height: 16px; line-height: 15px;
+  background: #c0c0c0; color: #000; font: bold 11px Tahoma; text-align: center;
+  box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff;
+}
+.t-90s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip) {
+  background: #fff; border: 0; border-radius: 0; box-shadow: inset -1px -1px #fff, inset 1px 1px #808080, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+.t-90s .section-title, .t-90s .arrival-date { font-size: clamp(2rem, 5vw, 3rem); color: #000080; }
+.t-90s .big-btn, .t-90s .small-btn {
+  background: #c0c0c0; border-radius: 0; color: #000; font-family: Tahoma, sans-serif;
+  box-shadow: inset -2px -2px #0a0a0a, inset 2px 2px #fff, inset -3px -3px #808080;
+}
+.t-90s .big-btn:hover, .t-90s .small-btn:hover { transform: none; }
+.t-90s .big-btn:active, .t-90s .small-btn:active { box-shadow: inset 2px 2px #0a0a0a, inset -2px -2px #fff; }
+.t-90s .site-header { background: #c0c0c0; border-bottom: 2px solid #fff; }
+.t-90s .site-header, .t-90s .site-header a, .t-90s .brand { color: #000; }
+.t-90s .brand b { color: #000080; }
+.t-90s .site-footer { color: #fff; }
+.t-90s .callout { background: #ffffe1; border: 1px solid #000; border-radius: 0; }
+
+/* ---------- 2000s: glossy Y2K / MySpace ---------- */
+.t-00s {
+  --bg: #bfe9ff; --bg2: #e9f7ff; --panel: rgba(255, 255, 255, 0.86); --panel-border: #7cc4ef;
+  --text: #0b2545; --muted: #3f5f80; --accent: #ff7b00; --accent2: #2a9df4; --btn-text: #fff;
+  --tile: linear-gradient(180deg, #ffffff, #e3f4ff); --font-head: 'Space Grotesk', 'Trebuchet MS', sans-serif;
+  --radius: 22px; --shadow: 0 6px 18px rgba(42, 157, 244, 0.35);
+}
+body.t-00s {
+  background: linear-gradient(180deg, #6dd5fa, #bfe9ff 40%, #ffffff);
+  background-attachment: fixed;
+}
+.t-00s .big-btn, .t-00s .small-btn {
+  background: linear-gradient(180deg, #ffb347 0%, #ff7b00 50%, #e86a00 51%, #ff9a2e 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 4px 10px rgba(255, 123, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.t-00s .section-title { color: #1667b5; }
+.t-00s .section-title::after { content: ' ✨'; }
+.t-00s .site-header { background: linear-gradient(180deg, #4ab3f4, #1667b5); }
+.t-00s .site-header, .t-00s .site-header a, .t-00s .brand, .t-00s .site-header .link-btn { color: #fff; }
+.t-00s .brand b { color: #ffd166; }
+
+/* ---------- 2010s: flat design ---------- */
+.t-10s {
+  --bg: #f2f4f7; --bg2: #f2f4f7; --panel: #ffffff; --panel-border: #e3e6eb;
+  --text: #212121; --muted: #666; --accent: #1e88e5; --accent2: #43a047; --btn-text: #fff;
+  --tile: #f7f9fc; --font-head: 'Inter', sans-serif; --radius: 4px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+body.t-10s { background: #f2f4f7; }
+.t-10s .big-btn, .t-10s .small-btn { background: var(--accent); border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+.t-10s .section-title { font-weight: 800; }
+.t-10s .site-header { background: #1e88e5; }
+.t-10s .site-header, .t-10s .site-header a, .t-10s .brand, .t-10s .site-header .link-btn { color: #fff; }
+.t-10s .brand b { color: #fff; }
+
+/* ---------- 2020s: dark glass ---------- */
+.t-20s {
+  --bg: #0f0c29; --bg2: #302b63; --panel: rgba(255, 255, 255, 0.08); --panel-border: rgba(255, 255, 255, 0.18);
+  --text: #fff; --muted: #c3c0e6; --accent: #8be9fd; --accent2: #ff79c6; --btn-text: #0f0c29;
+  --font-head: 'Space Grotesk', sans-serif; --radius: 24px;
+}
+body.t-20s { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); background-attachment: fixed; }
+.t-20s .panel { backdrop-filter: blur(14px); }
+
+/* Make the light themes' text inputs and links readable */
+.t-60s .copy-link, .t-70s .copy-link, .t-00s .copy-link, .t-10s .copy-link { border-color: var(--panel-border); }
+.t-60s .compare-table > div, .t-70s .compare-table > div, .t-00s .compare-table > div, .t-10s .compare-table > div, .t-90s .compare-table > div { background: #fff; }
+
+/* Header sign up button colors for themes with colored headers */
+.t-90s .nav-cta { background: #000080; color: #fff !important; }
+.t-10s .nav-cta { background: #fff; color: #1e88e5 !important; }
