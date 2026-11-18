@@ -9,7 +9,7 @@
 .t-10s :is(.tile, .price-card, .counter, .planet, .list-box, .tech-row, .twins li, .badge, .trip) {
   background: var(--tile);
 }
-.t-60s .moon-tile, .t-70s .moon-tile, .t-00s .moon-tile, .t-10s .moon-tile, .t-90s .moon-tile {
+body.machine .tile.moon-tile {
   background: radial-gradient(circle at 50% 30%, #1b2550, #070a16);
 }
 
