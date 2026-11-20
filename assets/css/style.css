@@ -48,7 +48,8 @@ hr { border: 0; border-top: 1px solid var(--panel-border); margin: 1.2rem 0; }
 }
 .brand { font-family: var(--font-head); color: var(--text); text-decoration: none; font-size: 1.15rem; }
 .brand b { color: var(--accent); }
-.brand-clock { display: inline-block; animation: tick 4s steps(8) infinite; }
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-clock { display: block; }
 @keyframes tick { to { transform: rotate(-360deg); } }
 .site-header nav { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
 .site-header nav a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 0.95rem; }

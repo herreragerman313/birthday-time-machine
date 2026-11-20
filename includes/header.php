@@ -21,10 +21,13 @@ $flashMsg = flash();
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Lobster&family=Monoton&family=Righteous&family=VT323&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=1">
   <link rel="stylesheet" href="assets/css/themes.css?v=1">
+  <?php if (!empty($extraStyles)) foreach ($extraStyles as $href): ?>
+  <link rel="stylesheet" href="<?= e($href) ?>">
+  <?php endforeach; ?>
 </head>
 <body class="<?= e($bodyClass) ?>">
 <header class="site-header">
-  <a class="brand" href="index.php"><span class="brand-clock">⏱️</span> Birthday <b>Time Machine</b></a>
+  <a class="brand" href="index.php">Birthday <b>Time Machine</b></a>
   <nav>
     <a href="index.php">Home</a>
     <a href="compare.php">Compare</a>
